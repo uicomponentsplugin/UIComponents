@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         imgCountDrawable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                circleDrawable.setText(String.valueOf(Integer.parseInt(circleDrawable.getText()) + 1));
+              //  circleDrawable.setText(String.valueOf(Integer.parseInt(circleDrawable.getText()) + 1));
             }
         });
 
