@@ -30,6 +30,11 @@ public class CircleDrawable extends Drawable {
 
     public void setText(String text) {
         this.text = text;
+        invalidateSelf();
+    }
+
+    public String getText() {
+        return text;
     }
 
     public enum Percent {TEN, TWENTY, THIRTY, FORTY, FIFTY, SIXTY, SEVENTY, EIGHTY, NINETY, HUNDRED}

@@ -7,6 +7,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import ui.components.library.CircleDrawable;
+import ui.components.library.utilities.Util;
+
+import static ui.components.library.CircleDrawable.Gravity.TOP_RIGHT;
+import static ui.components.library.CircleDrawable.Percent.FIFTY;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -20,13 +26,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         ImageView imgCountDrawable = findViewById(R.id.imgCountDrawable);
-        /*CircleDrawable circleDrawable = new CircleDrawable(this);
-        circleDrawable.setSizePercent(NINETY);
-        circleDrawable.setGravity(CENTER);
-        circleDrawable.setText("3");
+        final CircleDrawable circleDrawable = new CircleDrawable(this);
+        circleDrawable.setSizePercent(FIFTY);
+        circleDrawable.setGravity(TOP_RIGHT);
+        circleDrawable.setText("300");
         circleDrawable.setStrokeWidth(Util.dpToPx(3));
         //circleDrawable.setFilledColor(getColor(R.color.colorPrimaryDark));
-        imgCountDrawable.setImageDrawable(circleDrawable);*/
+        imgCountDrawable.setImageDrawable(circleDrawable);
+        imgCountDrawable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                circleDrawable.setText(String.valueOf(Integer.parseInt(circleDrawable.getText()) + 1));
+            }
+        });
 
     }
 }
