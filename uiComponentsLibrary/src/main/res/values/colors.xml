@@ -6,4 +6,10 @@
     <color name="circle_drawable_filled">@color/red</color>
     <color name="circle_drawable_stroke">@color/black</color>
     <color name="circle_drawable_text">@color/white</color>
+    <!--
+    ref: https://stackoverflow.com/questions/5445085/understanding-colors-on-android-six-characters/11019879#11019879
+    ((percentage/100) * 255) then convert to decimal to hex converter
+    https://www.binaryhexconverter.com/decimal-to-hex-converter
+    -->
+    <color name="transparent_black_60">#99000000</color>
 </resources>

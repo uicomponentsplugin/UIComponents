@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import ui.components.library.CircleDrawable;
+import ui.components.library.PDFViewer;
+import ui.components.library.databinding.LoadingViewBinding;
 import ui.components.library.utilities.Util;
 
 import static ui.components.library.CircleDrawable.Gravity.TOP_RIGHT;
@@ -18,8 +20,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        final TextView textView = findViewById(R.id.text);
+        LoadingViewBinding binding = LoadingViewBinding.inflate(getLayoutInflater());
+        binding.loadingProgressBar.show();
+        setContentView(binding.getRoot());
+        /*final TextView textView = findViewById(R.id.text);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
               //  circleDrawable.setText(String.valueOf(Integer.parseInt(circleDrawable.getText()) + 1));
             }
-        });
+        });*/
+
 
     }
 }
