@@ -4,6 +4,11 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "ui.components"
         minSdkVersion 23
@@ -39,7 +44,11 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     implementation project(path: ':uiComponentsLibrary')
+    //implementation project(path: ':PopupLibrary')
+
     //implementation 'com.github.uicomponentsplugin:UIComponents:1.0.3'
+    implementation 'com.github.uicomponentsplugin:TagsSelection:1.0.4'
 }

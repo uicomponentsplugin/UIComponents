@@ -1,28 +1,45 @@
 package ui.components;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
-import ui.components.library.CircleDrawable;
-import ui.components.library.PDFViewer;
-import ui.components.library.databinding.LoadingViewBinding;
-import ui.components.library.utilities.Util;
-
-import static ui.components.library.CircleDrawable.Gravity.TOP_RIGHT;
-import static ui.components.library.CircleDrawable.Percent.FIFTY;
+import ui.components.databinding.ActivityMainBinding;
+import ui.components.library.EditText2;
 
 public class MainActivity extends AppCompatActivity {
+    private ActivityMainBinding binding;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LoadingViewBinding binding = LoadingViewBinding.inflate(getLayoutInflater());
-        binding.loadingProgressBar.show();
+       /* LoadingViewBinding binding = LoadingViewBinding.inflate(getLayoutInflater());
+        binding.loadingProgressBar.show();*/
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding.editQuery.setOnDrawableClickListener(new EditText2.onDrawableClickListener() {
+            @Override
+            public void onLeftClick() {
+                Log.d("TAG", "onLeftClick: ");
+                binding.editQuery.setTextSilently("Changed");
+            }
+
+            @Override
+            public void onRightClick() {
+                binding.editQuery.removeTextChangedListener();
+                Log.d("TAG", "onRightClick: ");
+            }
+        });
+        binding.editQuery.addTextChangedListener2(new EditText2.TextWatcher2() {
+            @Override
+            public void afterTextChanged(String s) {
+                Log.d("TAG", "onTextChanged: " + s);
+            }
+        });
         setContentView(binding.getRoot());
+        //binding.viewPager.setAdapter(new ScreenSlidePagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.POSITION_NONE));
         /*final TextView textView = findViewById(R.id.text);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
