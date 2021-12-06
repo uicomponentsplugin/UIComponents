@@ -11,6 +11,7 @@ android {
 
     defaultConfig {
         applicationId "ui.components"
+
         minSdkVersion 23
         //noinspection OldTargetApi
         targetSdkVersion 29
