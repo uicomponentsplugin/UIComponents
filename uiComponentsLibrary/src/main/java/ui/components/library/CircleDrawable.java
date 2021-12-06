@@ -17,7 +17,7 @@ import ui.components.library.utilities.Util;
  * Created by Mahesh Balla on 17,August,2020
  */
 public class CircleDrawable extends Drawable {
-    private Context context;
+    private final Context context;
     //Defaults
     protected Percent percent = Percent.FIFTY;
     protected Gravity gravity = Gravity.CENTER;
@@ -73,14 +73,14 @@ public class CircleDrawable extends Drawable {
     @Override
     public void draw(@NonNull Canvas canvas) {
         Paint filledPaint = new Paint();
-        filledPaint.setColor(filledColor == 0 ? context.getColor(R.color.circle_drawable_filled) : filledColor);
+        filledPaint.setColor(filledColor == 0 ? context.getColor(R.color.circle_drawable_filled) : context.getColor(filledColor));
         if (strokeColor == 0)
             strokeColor = filledColor;
         filledPaint.setAntiAlias(true);// To get perfect sharpness
         filledPaint.setStyle(Paint.Style.FILL);
 
         Paint strokePaint = new Paint();
-        strokePaint.setColor(strokeColor == 0 ? context.getColor(R.color.circle_drawable_stroke) : strokeColor);
+        strokePaint.setColor(strokeColor == 0 ? context.getColor(R.color.circle_drawable_stroke) : context.getColor(strokeColor));
         strokePaint.setStrokeWidth(strokeWidth == 0 ? Util.dpToPx(1) : strokeWidth);
         strokePaint.setStyle(Paint.Style.STROKE);
 
@@ -144,7 +144,7 @@ public class CircleDrawable extends Drawable {
         canvas.drawCircle(pointX, pointY, radius, strokePaint);
         if (text != null && !text.isEmpty()) {
             Paint textPaint = new Paint();
-            textPaint.setColor(context.getColor(R.color.circle_drawable_text));
+            textPaint.setColor(textColor == 0 ? context.getColor(R.color.circle_drawable_text) : context.getColor(textColor));
             textPaint.setTextAlign(Paint.Align.CENTER);
             textPaint.setAntiAlias(true);
             textPaint.setTextSize(calculateMaxTextSize(text, textPaint, (int) (drawableWidth * 0.66), (int) (drawableHeight * 0.66)));

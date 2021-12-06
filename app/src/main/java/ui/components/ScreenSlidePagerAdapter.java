@@ -3,11 +3,12 @@ package ui.components;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentPagerAdapter;
 
-public class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-    public ScreenSlidePagerAdapter(@NonNull FragmentManager fm, int behavior) {
-        super(fm, behavior);
+public class ScreenSlidePagerAdapter extends FragmentPagerAdapter {
+
+    public ScreenSlidePagerAdapter(@NonNull FragmentManager fragmentManager) {
+        super(fragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
     }
 
     @NonNull
@@ -16,8 +17,19 @@ public class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
         return ViewPagerFragment.newInstance(position);
     }
 
+    /* @NonNull
+     @Override
+     public Fragment createFragment(int position) {
+         return ViewPagerFragment.newInstance(position);
+     }
+
+     @Override
+     public int getItemCount() {
+         return 10;
+     }
+ */
     @Override
     public int getCount() {
-        return 5;
+        return 10;
     }
 }
