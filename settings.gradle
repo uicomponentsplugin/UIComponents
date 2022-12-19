@@ -1,4 +1,4 @@
-//include ':PopupLibrary'
 rootProject.name='UIComponents'
 include ':app'
 include ':uiComponentsLibrary'
+include ':PopupLibrary'
