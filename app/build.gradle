@@ -48,7 +48,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation project(path: ':uiComponentsLibrary')
+//    implementation 'com.github.uicomponentsplugin.UIComponents:uiComponentsLibrary:a03a0ae8b5'
     implementation project(path: ':PopupLibrary')
+//    implementation 'com.github.uicomponentsplugin.UIComponents:PopupLibrary:a03a0ae8b5'
 //    implementation project(path: ':nsupportlibrary')
 
     //implementation 'com.github.uicomponentsplugin:UIComponents:1.0.3'
