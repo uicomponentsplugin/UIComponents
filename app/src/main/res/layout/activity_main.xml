@@ -7,7 +7,55 @@
     android:orientation="vertical"
     tools:context=".DemoActivity">
 
-    <ui.components.ViewPager
+
+    <ui.components.library.DrawingView
+        android:id="@+id/drawingView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:backgroundColor="@color/primaryColor"
+        app:layout_constraintBottom_toTopOf="@+id/imgDrawing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lineColor="@color/white"
+        app:lineStrokeWidth="6" />
+
+    <ImageView
+        android:id="@+id/imgDrawing"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="36dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnClear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drawingView" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:onClick="clearDrawing"
+        android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSave"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:onClick="getBitmap"
+        android:text="Save"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnClear"
+        app:layout_constraintTop_toTopOf="@+id/btnClear" />
+    <!--<ui.components.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:tabBackground="@drawable/view_pager_dots"
         app:tabGravity="center"
-        app:tabIndicatorHeight="0dp" />
+        app:tabIndicatorHeight="0dp" />-->
 
     <!--  <LinearLayout
           android:layout_width="match_parent"

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.method.KeyListener;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,7 +22,7 @@ public class DemoActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.viewPager.setAdapter(new ScreenSlidePagerAdapter(getSupportFragmentManager()));
+        /*binding.viewPager.setAdapter(new ScreenSlidePagerAdapter(getSupportFragmentManager()));
         Handler handler = new Handler(Looper.getMainLooper());
         Runnable update = new Runnable() {
             @Override
@@ -36,8 +37,18 @@ public class DemoActivity extends AppCompatActivity {
             }
         };
         handler.postDelayed(update, 3000);
-        binding.tabLayout.setupWithViewPager(binding.viewPager);
+        binding.tabLayout.setupWithViewPager(binding.viewPager);*/
 
+    }
+
+    public void getBitmap(View view) {
+        binding.imgDrawing.setImageBitmap(binding.drawingView.getBitmap());
+//        binding.signature.setImageBitmap(binding.drawingView.getBitmap());
+    }
+
+    public void clearDrawing(View view) {
+        binding.imgDrawing.setImageDrawable(null);
+        binding.drawingView.clearDrawable();
     }
 
         /* LoadingViewBinding binding = LoadingViewBinding.inflate(getLayoutInflater());

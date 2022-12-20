@@ -11,9 +11,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/PopupLibrary" />
+            <option value="$PROJECT_DIR$/DialogTagSelection" />
+            <option value="$PROJECT_DIR$/Utilities" />
+            <option value="$PROJECT_DIR$/ViewComponents" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/uiComponentsLibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

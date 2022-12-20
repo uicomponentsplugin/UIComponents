@@ -1,4 +1,5 @@
 rootProject.name='UIComponents'
 include ':app'
-include ':uiComponentsLibrary'
-include ':PopupLibrary'
+include ':ViewComponents'
+include ':DialogTagSelection'
+include ':Utilities'

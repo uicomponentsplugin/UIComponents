@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IconView">
+        <attr format="string" name="fileName"/>
+    </declare-styleable>
+    <declare-styleable name="DrawingView">
+        <attr format="color" name="lineColor"/>
+        <attr format="integer" name="lineStrokeWidth"/>
+        <attr format="color" name="backgroundColor"/>
+    </declare-styleable>
+</resources>

@@ -47,10 +47,12 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
-    implementation project(path: ':uiComponentsLibrary')
-//    implementation 'com.github.uicomponentsplugin.UIComponents:uiComponentsLibrary:f33c71e47a'
-    implementation project(path: ':PopupLibrary')
-//    implementation 'com.github.uicomponentsplugin.UIComponents:PopupLibrary:f33c71e47a'
+
+    implementation project(path: ':ViewComponents')
+//    implementation 'com.github.uicomponentsplugin.UIComponents:uiComponentsLibrary:8d400b62c9'
+    implementation project(path: ':DialogTagSelection')
+//    implementation 'com.github.uicomponentsplugin.UIComponents:PopupLibrary:8d400b62c9'
+
 //    implementation project(path: ':nsupportlibrary')
 
     //implementation 'com.github.uicomponentsplugin:UIComponents:1.0.3'
