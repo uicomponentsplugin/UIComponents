@@ -20,12 +20,12 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
+//    buildTypes {
+//        release {
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
     buildFeatures {
         viewBinding true
     }
@@ -48,9 +48,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation project(path: ':uiComponentsLibrary')
-//    implementation 'com.github.uicomponentsplugin.UIComponents:uiComponentsLibrary:a03a0ae8b5'
+//    implementation 'com.github.uicomponentsplugin.UIComponents:uiComponentsLibrary:f33c71e47a'
     implementation project(path: ':PopupLibrary')
-//    implementation 'com.github.uicomponentsplugin.UIComponents:PopupLibrary:a03a0ae8b5'
+//    implementation 'com.github.uicomponentsplugin.UIComponents:PopupLibrary:f33c71e47a'
 //    implementation project(path: ':nsupportlibrary')
 
     //implementation 'com.github.uicomponentsplugin:UIComponents:1.0.3'
