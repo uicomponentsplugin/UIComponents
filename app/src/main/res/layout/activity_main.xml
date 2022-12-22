@@ -36,9 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:textColor="@color/black"
         android:onClick="clearDrawing"
         android:text="Clear"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnSave"
         app:layout_constraintStart_toStartOf="parent" />
