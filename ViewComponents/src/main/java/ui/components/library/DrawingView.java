@@ -12,6 +12,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ScrollView;
 
 import androidx.annotation.Nullable;
 
@@ -19,6 +20,7 @@ public class DrawingView extends View {
     private Paint mPaint;
     private Path mPath;
     private int mCanvasColor;
+    private ScrollView scrollView;
 
     public DrawingView(Context context) {
         super(context);
@@ -34,6 +36,7 @@ public class DrawingView extends View {
 
         mPaint.setColor(typedArray.getColor(R.styleable.DrawingView_lineColor, getResources().getColor(R.color.black)));
         mPaint.setStrokeWidth(typedArray.getInteger(R.styleable.DrawingView_lineStrokeWidth, 5));
+
         typedArray.recycle();
 
         mPaint.setStyle(Paint.Style.STROKE);
@@ -59,13 +62,23 @@ public class DrawingView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (scrollView != null) {
+            scrollView.requestDisallowInterceptTouchEvent(false); // Any type of motion event initially InterceptTouchEvent(true)
+        }
         Log.d("TAG", "onTouchEvent:  X-" + event.getX() + ", Y -" + event.getY() + "event Action: " + getEventActionName(event.getAction()));
         float x = event.getX();
         float y = event.getY();
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             mPath.moveTo(x, y);
+            if (scrollView != null)
+                scrollView.requestDisallowInterceptTouchEvent(true);
         } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
             mPath.lineTo(x, y);
+            if (scrollView != null)
+                scrollView.requestDisallowInterceptTouchEvent(true);
+        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+            if (scrollView != null)
+                scrollView.requestDisallowInterceptTouchEvent(false);
         }
         invalidate();
         return true;
@@ -106,5 +119,9 @@ public class DrawingView extends View {
     public void clearDrawable() {
         mPath.reset();
         invalidate();
+    }
+
+    public void addScrollView(ScrollView scrollView) {
+        this.scrollView = scrollView;
     }
 }

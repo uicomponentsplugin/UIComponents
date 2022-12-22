@@ -1,14 +1,10 @@
 package ui.components;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.text.method.KeyListener;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Objects;
 
 import ui.components.databinding.ActivityMainBinding;
 
@@ -21,7 +17,8 @@ public class DemoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        binding.drawingView.addScrollView(binding.scrollView);
+        Log.d("TAG", "onCreate: " + binding.scrollView.getId());
         /*binding.viewPager.setAdapter(new ScreenSlidePagerAdapter(getSupportFragmentManager()));
         Handler handler = new Handler(Looper.getMainLooper());
         Runnable update = new Runnable() {

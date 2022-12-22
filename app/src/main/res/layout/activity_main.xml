@@ -8,17 +8,58 @@
     tools:context=".DemoActivity">
 
 
-    <ui.components.library.DrawingView
-        android:id="@+id/drawingView"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:backgroundColor="@color/primaryColor"
         app:layout_constraintBottom_toTopOf="@+id/imgDrawing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lineColor="@color/white"
-        app:lineStrokeWidth="6" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ui.components.library.DrawingView
+                android:id="@+id/drawingView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:backgroundColor="@color/primaryColor"
+                app:layout_constraintBottom_toTopOf="@+id/imgDrawing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lineColor="@color/white"
+                app:lineStrokeWidth="6"
+                app:parentScrollId="@+id/scrollView" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="Dummy content 1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:gravity="center"
+                android:text="Dummy content 2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="Dummy content 2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:gravity="center"
+                android:text="Dummy content 4" />
+        </LinearLayout>
+    </ScrollView>
 
     <ImageView
         android:id="@+id/imgDrawing"
@@ -29,7 +70,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnClear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/drawingView" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
 
     <Button
         android:id="@+id/btnClear"
