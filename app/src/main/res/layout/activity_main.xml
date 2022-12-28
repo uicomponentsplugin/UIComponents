@@ -26,14 +26,9 @@
                 android:id="@+id/drawingView"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                app:backgroundColor="@color/primaryColor"
-                app:layout_constraintBottom_toTopOf="@+id/imgDrawing"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:lineColor="@color/white"
-                app:lineStrokeWidth="6"
-                app:parentScrollId="@+id/scrollView" />
+                app:lineColor="@color/black"
+                app:backgroundSrc="@color/primaryColor"
+                app:lineStrokeWidth="6" />
 
             <TextView
                 android:layout_width="match_parent"

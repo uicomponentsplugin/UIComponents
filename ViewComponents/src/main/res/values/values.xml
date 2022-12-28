@@ -6,7 +6,7 @@
     <declare-styleable name="DrawingView">
         <attr name="lineColor" format="color" />
         <attr name="lineStrokeWidth" format="integer" />
-        <attr name="backgroundColor" format="color" />
-        <attr name="parentScrollId" format="integer"/>
+        <!--        <attr name="backgroundColor" format="color" />-->
+        <attr name="backgroundSrc" format="reference" />
     </declare-styleable>
 </resources>

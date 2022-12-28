@@ -16,10 +16,12 @@ import android.widget.ScrollView;
 
 import androidx.annotation.Nullable;
 
+
 public class DrawingView extends View {
     private Paint mPaint;
+    //    private Paint strokePaint = new Paint();
     private Path mPath;
-    private int mCanvasColor;
+    //    private int mCanvasColor;
     private ScrollView scrollView;
 
     public DrawingView(Context context) {
@@ -28,21 +30,22 @@ public class DrawingView extends View {
 
     public DrawingView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        mPath = new Path();
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DrawingView);
-
-        mCanvasColor = typedArray.getColor(R.styleable.DrawingView_backgroundColor, getResources().getColor(R.color.white));
-
-        mPaint.setColor(typedArray.getColor(R.styleable.DrawingView_lineColor, getResources().getColor(R.color.black)));
-        mPaint.setStrokeWidth(typedArray.getInteger(R.styleable.DrawingView_lineStrokeWidth, 5));
-
-        typedArray.recycle();
-
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPath = new Path();
+
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DrawingView);
+        mPaint.setColor(typedArray.getColor(R.styleable.DrawingView_lineColor, getResources().getColor(R.color.black)));
+        mPaint.setStrokeWidth(typedArray.getInteger(R.styleable.DrawingView_lineStrokeWidth, 5));
+        setBackgroundResource(typedArray.getResourceId(R.styleable.DrawingView_backgroundSrc, R.color.white));
+        typedArray.recycle();
+
+
+//        strokePaint.setStyle(Paint.Style.STROKE);
+//        strokePaint.setColor(Color.BLACK);
+//        strokePaint.setStrokeWidth(2);
     }
 
     public DrawingView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -55,8 +58,13 @@ public class DrawingView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawColor(mCanvasColor);
+//        canvas.drawColor(mCanvasColor);
         canvas.drawPath(mPath, mPaint);
+
+//        RectF r = new RectF(30, 30, canvas.getWidth()-30, canvas.getHeight()-30);
+//        int cornerRadius = 50;
+//        // stroke
+//        canvas.drawRoundRect(r, cornerRadius, cornerRadius, strokePaint);
         super.onDraw(canvas);
     }
 
@@ -103,16 +111,18 @@ public class DrawingView extends View {
         Canvas canvas = new Canvas(returnedBitmap);
         //Get the view's background
         Drawable bgDrawable = getBackground();
-        if (bgDrawable != null)
-            //has background drawable, then draw it on the canvas
-            bgDrawable.draw(canvas);
-        else
-            //does not have background drawable, then draw white background on the canvas
-            canvas.drawColor(Color.WHITE);
+        setBackground(null);
+//        if (bgDrawable != null)
+//            //has background drawable, then draw it on the canvas
+//            bgDrawable.draw(canvas);
+//        else
+        //does not have background drawable, then draw white background on the canvas
+        canvas.drawColor(Color.WHITE);
 
         // draw the view on the canvas
         draw(canvas);
         //return the bitmap
+        setBackground(bgDrawable);
         return returnedBitmap;
     }
 
@@ -124,4 +134,12 @@ public class DrawingView extends View {
     public void addScrollView(ScrollView scrollView) {
         this.scrollView = scrollView;
     }
+
+    public boolean isEmpty() {
+        return mPath.isEmpty();
+    }
+
+//    public void setError() {
+//
+//    }
 }
