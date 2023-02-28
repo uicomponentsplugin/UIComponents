@@ -54,6 +54,8 @@ dependencies {
     implementation project(path: ':DialogTagSelection')
     implementation project(path: ':Utilities')
     implementation project(path: ':ViewComponents')
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
 //    implementation 'com.github.uicomponentsplugin.UIComponents:uiComponentsLibrary:8d400b62c9'
 
 //    implementation 'com.github.uicomponentsplugin.UIComponents:PopupLibrary:8d400b62c9'

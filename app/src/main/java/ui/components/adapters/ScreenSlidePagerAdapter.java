@@ -1,9 +1,11 @@
-package ui.components;
+package ui.components.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
+import ui.components.acivities.ads.ViewPagerFragment;
 
 public class ScreenSlidePagerAdapter extends FragmentPagerAdapter {
 

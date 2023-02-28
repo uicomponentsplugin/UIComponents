@@ -1,4 +1,4 @@
-package ui.components;
+package ui.components.acivities.ads;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

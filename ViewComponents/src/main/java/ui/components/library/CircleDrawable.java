@@ -79,6 +79,7 @@ public class CircleDrawable extends Drawable {
         filledPaint.setStyle(Paint.Style.FILL);
 
         Paint strokePaint = new Paint();
+        strokePaint.setAntiAlias(true);// To get perfect sharpness
         strokePaint.setColor(strokeColor == 0 ? context.getColor(R.color.circle_drawable_stroke) : context.getColor(strokeColor));
         strokePaint.setStrokeWidth(strokeWidth == 0 ? 1 : strokeWidth);
         strokePaint.setStyle(Paint.Style.STROKE);
@@ -134,8 +135,8 @@ public class CircleDrawable extends Drawable {
                 radius = drawableWidth < drawableHeight ? drawableHeight / 2 : drawableWidth / 2;
                 break;
             case TOP_RIGHT:
-                pointX = width - drawableWidth / 2;
-                pointY = drawableHeight / 2;
+                pointX = width - strokeWidth - drawableWidth / 2;
+                pointY = drawableHeight / 2 + strokeWidth;
                 radius = drawableWidth < drawableHeight ? drawableHeight / 2 : drawableWidth / 2;
                 break;
         }

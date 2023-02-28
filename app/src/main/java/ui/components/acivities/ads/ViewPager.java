@@ -1,4 +1,4 @@
-package ui.components;
+package ui.components.acivities.ads;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin/Documents/WorkSpace/Android/Practice/UiComponents/app/src/main/res/drawable/view_pager_dots.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/Admin/Documents/WorkSpace/Android/Practice/UiComponents/app/src/main/res/layout/activity_ads.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/Admin/Documents/WorkSpace/Android/Practice/UiComponents/app/src/main/res/layout/activity_drawing_view.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/Admin/Documents/WorkSpace/Android/Practice/UiComponents/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/Admin/Documents/WorkSpace/Android/Practice/UiComponents/app/src/main/res/layout/activity_menu.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/Admin/Documents/WorkSpace/Android/Practice/UiComponents/app/src/main/res/layout/activity_view_components.xml" value="0.6" />
+        <entry key="..\:/Users/Admin/Documents/WorkSpace/Android/Practice/UiComponents/app/src/main/res/layout/content_scrolling.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/Admin/Documents/WorkSpace/Android/Practice/UiComponents/app/src/main/res/layout/item_card.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/Admin/Documents/WorkSpace/Android/Practice/UiComponents/app/src/main/res/layout/item_card_2.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/admin/Documents/WorkSpace/Android/Practice/uiCompnents/app/src/main/res/drawable-v24/viewpager_inactive_dot.xml" value="0.24375" />
         <entry key="..\:/Users/admin/Documents/WorkSpace/Android/UIComponents/PopupLibrary/src/main/res/layout-v21/tag_selected.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/admin/Documents/WorkSpace/Android/UIComponents/PopupLibrary/src/main/res/layout/fragment_tag_selection_list.xml" value="0.11302083333333333" />
@@ -14,5 +23,5 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

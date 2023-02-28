@@ -1,4 +1,4 @@
-package ui.components;
+package ui.components.acivities;
 
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +19,8 @@ import static com.tags.popuplibrary.models.Constants.BundleKeys.CHECK_BOX_COLOR;
 import static com.tags.popuplibrary.models.Constants.BundleKeys.MAX_SELECTABLE_TAGS;
 import static com.tags.popuplibrary.models.Constants.BundleKeys.TAGS;
 import static com.tags.popuplibrary.models.Constants.BundleKeys.TAG_CANCEL_COLOR;
+
+import ui.components.R;
 
 public class TagSelectionActivity extends AppCompatActivity implements tagSubmitCallback {
     private Tags tags;
